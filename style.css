@@ -1,0 +1,50 @@
+* {
+    border: 1px dotted black;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: rgb(243, 195, 106);
+    font-family: "Courier New", Courier, monospace;
+
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    text-shadow: .1em .1em rgb(247, 248, 168), .15em .15em pink;
+    font-size: 5em;
+}
+
+.etchmain {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.settings {
+    list-style-type: none;
+}
+
+.settings button {
+    background-color: pink;
+    border-radius: 0px;
+    font-size: 26px; 
+    line-height: 26px; 
+    padding: 10px; 
+    margin-bottom: .5em;
+    box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px; 
+    border: 2px solid rgb(28, 110, 164); 
+    
+    }
+
+.sketchbox {
+    display: flex;
+    border: 4px black solid;
+    height: 50em;
+    min-width: 50em;
+    box-shadow:.8em .8em black;
+    
+}
