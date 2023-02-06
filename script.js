@@ -1,7 +1,7 @@
 let sizeInput = document.querySelector("#sizeInput")
 let sizeSubmit = document.querySelector(".sizeSubmit")
 let sketchbox = document.querySelector(".sketchbox")
-let buttons = document.querySelectorAll("button")
+let reset = document.querySelector(".reset")
 let squares = document.querySelectorAll(".s")
 
 
@@ -31,13 +31,25 @@ function deleteDivs(parentNode) {
 sketchbox.addEventListener("mouseover", () => {
     for(let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseover", () => {
-            squares[i].removeAttribute("class", "s")
+            squares[i].removeAttribute("class", "s") 
             squares[i].setAttribute("class", "pendown")
         })
     }
 })
 
-/* Change Size Button */
+
+
+
+/* Reset */
+reset.addEventListener("click", () => {
+    for(let i = 0; i <squares.length; i++) {
+        squares[i].removeAttribute("class", "pendown")
+        squares[i].setAttribute("class", "s")
+    }
+})
+
+
+/* Change Size */
 sizeSubmit.addEventListener("click", () => {
     if ((sizeInput.value >= 1) && (sizeInput.value <= 100)) {
         deleteDivs(sketchbox)
