@@ -56,9 +56,27 @@ h1 {
     height: 50em;
     min-width: 50em;
     box-shadow:.8em .8em black;
+    background-color: aliceblue;
+    
     
 }
+.row {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.s {
+    border: .1em solid rgb(224, 224, 224);
+    flex-grow: 1;
+       
+}
 
+.pendown {
+    border: .1em solid rgb(224, 224, 224);
+    background-color: black;
+    flex-grow: 1;
+
+}
 
 /* to remove the spin down from number input box */
 input[type="number"]::-webkit-outer-spin-button,
