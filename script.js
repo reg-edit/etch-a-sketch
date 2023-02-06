@@ -3,7 +3,9 @@ let sizeSubmit = document.querySelector(".sizeSubmit")
 let sketchbox = document.querySelector(".sketchbox")
 let reset = document.querySelector(".reset")
 let squares = document.querySelectorAll(".s")
-
+let rgb = document.querySelector(".RGB")
+let greyScale = document.querySelector(".greyscale")
+let black = document.querySelector(".black")
 
 
 
@@ -15,6 +17,7 @@ function createDivs(n) {
         for (let j = 0; j < n; j++) {
             let square = document.createElement("div")
             square.setAttribute("class", "s")
+            square.style.backgroundColor = "white"
             row.appendChild(square)
         }
     }  
@@ -28,23 +31,49 @@ function deleteDivs(parentNode) {
 }
 
 
+
 sketchbox.addEventListener("mouseover", () => {
     for(let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseover", () => {
-            squares[i].removeAttribute("class", "s") 
-            squares[i].setAttribute("class", "pendown")
+            if (rgb.value === "on") {
+                squares[i].style.backgroundColor = ("#" + Math.floor(Math.random()*16777215).toString(16))
+            }
+            else if (greyScale.value ==="on") {
+
+            }
+            else {
+                squares[i].style.backgroundColor = "black"
+            }
+
         })
     }
 })
+/
+/* Black Button */
+black.addEventListener("click", () => {
+        greyScale.value = "off"
+        rgb.value = "off" 
+})
+
+/* Greyscale Button */
+greyScale.addEventListener("click", () => {
+    if (greyScale.value === "off")
+        rgb.value = "off"
+        greyScale.value = "on" 
+})
+
+/* RGB Button */
+rgb.addEventListener("click", () => {
+    if (rgb.value === "off")
+        greyScale.value = "off"
+        rgb.value = "on" 
+})
 
 
-
-
-/* Reset */
+/* Reset Button */
 reset.addEventListener("click", () => {
     for(let i = 0; i <squares.length; i++) {
-        squares[i].removeAttribute("class", "pendown")
-        squares[i].setAttribute("class", "s")
+        squares[i].style.backgroundColor = "white"
     }
 })
 
@@ -62,4 +91,4 @@ sizeSubmit.addEventListener("click", () => {
 })
 
 
-createDivs(64)
+createDivs(30)

@@ -74,7 +74,7 @@ h1 {
 
 .pendown {
     border: .1em solid rgb(224, 224, 224);
-    background-color: black;
+    background-color: rgb(255);
     flex-grow: 1;
 
 }
