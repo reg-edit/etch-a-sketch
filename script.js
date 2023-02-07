@@ -31,7 +31,6 @@ function deleteDivs(parentNode) {
 }
 
 
-
 sketchbox.addEventListener("mouseover", () => {
     for(let i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseover", () => {
@@ -39,8 +38,9 @@ sketchbox.addEventListener("mouseover", () => {
                 squares[i].style.backgroundColor = ("#" + Math.floor(Math.random()*16777215).toString(16))
             }
             else if (greyScale.value ==="on") {
-
+                
             }
+
             else {
                 squares[i].style.backgroundColor = "black"
             }
