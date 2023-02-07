@@ -72,13 +72,6 @@ h1 {
        
 }
 
-.pendown {
-    border: .1em solid rgb(224, 224, 224);
-    background-color: rgb(255);
-    flex-grow: 1;
-
-}
-
 
 /* to remove the spin down from number input box */
 input[type="number"]::-webkit-outer-spin-button,
